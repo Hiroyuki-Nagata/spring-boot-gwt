@@ -17,12 +17,12 @@ public class EmployeeController {
 	@Autowired
 	protected EmployeeService employeesService;
 
-	@RequestMapping(value = "/employees", method = RequestMethod.GET)
+	@RequestMapping(value = "/rest/employees", method = RequestMethod.GET)
 	public List<Employee> list() {
 		return employeesService.getEmployeesMapper().selectAll();
 	}
 
-	@RequestMapping(value = "/employees/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/rest/employees/{id}", method = RequestMethod.GET)
 	public Employee get(@PathVariable Integer id) {
 		return employeesService.getEmployeesMapper().selectOne(id);
 	}
